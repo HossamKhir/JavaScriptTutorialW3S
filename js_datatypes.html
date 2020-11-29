@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <title>Data Types</title>
+</head>
+
+<body>
+    <p>
+        JavaScript variables can hold many data types: numbers, strings, objects and more
+        <br />
+    <pre><code>
+            var length = 16;                               // Number
+            var lastName = "Johnson";                      // String
+            var x = {firstName:"John", lastName:"Doe"};    // Object            
+        </code></pre>
+    </p>
+    <p>
+        JavaScript evaluates expressions from left to right. Different sequences can produce different results
+        <br />
+    <pre><code>
+            var x = 16 + 4 + "Volvo";   // result: 20Volvo
+            var x = "Volvo" + 16 + 4;   // result: Volvo164
+        </code></pre>
+    </p>
+    <p>
+        JavaScript has dynamic types. This means that the same variable can be used to hold different data types
+        <br />
+    <pre><code>
+            var x;           // Now x is undefined
+            x = 5;           // Now x is a Number
+            x = "John";      // Now x is a String
+        </code></pre>
+    </p>
+    <h3>Strings</h3>
+    <pre><code>
+        var carName1 = "Volvo XC60";   // Using double quotes
+        var carName2 = 'Volvo XC60';   // Using single quotes
+        // You can use quotes inside a string, as long as they don't match the quotes surrounding the string
+        var answer1 = "It's alright";             // Single quote inside double quotes
+        var answer2 = "He is called 'Johnny'";    // Single quotes inside double quotes
+        var answer3 = 'He is called "Johnny"';    // Double quotes inside single quotes      
+    </code></pre>
+    <h3>Numbers</h3>
+    <p>
+        JavaScript has only one type of numbers
+        <br />
+    <pre><code>
+            var x1 = 34.00;     // Written with decimals
+            var x2 = 34;        // Written without decimals
+            // Extra large or extra small numbers can be written with scientific (exponential) notation
+            var y = 123e5;      // 12300000
+            var z = 123e-5;     // 0.00123            
+        </code></pre>
+    </p>
+    <h3>Booleans</h3>
+    <p>
+        Booleans can only have two values: true or false
+        <br />
+    <pre><code>
+            var x = 5;
+            var y = 5;
+            var z = 6;
+            (x == y)       // Returns true
+            (x == z)       // Returns false            
+        </code></pre> <br />
+    Booleans are often used in conditional testing
+    </p>
+    <h3>Arrays</h3>
+    <p>
+        JavaScript arrays are written with square brackets. Items are separated by commas
+    <pre>
+            <code>
+                var cars = ["Saab", "Volvo", "BMW"];
+            </code>
+        </pre>
+    Array indexes are zero-based, which means the first item is [0], second is [1], and so on
+    </p>
+    <h3>Objects</h3>
+    <p>
+        JavaScript objects are written with curly braces {}
+    <pre><code>
+        var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+    </code></pre>
+    The object (person) has 4 properties: firstName, lastName, age, and eyeColor
+    </p>
+    <h3>typeof Operator</h3>
+    <p>
+        The typeof operator returns the type of a variable
+    <pre><code>
+        typeof ""             // Returns "string"
+        typeof "John"         // Returns "string"
+        typeof "John Doe"     // Returns "string"
+        typeof 0              // Returns "number"
+        typeof 314            // Returns "number"
+        typeof 3.14           // Returns "number"
+        typeof (3)            // Returns "number"
+        typeof (3 + 4)        // Returns "number"        
+    </code></pre>
+    </p>
+    <p>
+        a variable without a value, has the value undefined. The type is also undefined
+    <pre><code>
+        var car;    // Value is undefined, type is undefined
+    </code></pre>
+    Any variable can be emptied, by setting the value to undefined. The type will also be undefined
+    <pre><code>
+        car = undefined;    // Value is undefined, type is undefined
+    </code></pre>
+    An empty value has nothing to do with undefined
+    <pre><code>
+        var car = "";    // The value is "", the typeof is "string"
+    </code></pre>
+    </p>
+    <h3>Null</h3>
+    <p>
+        In JavaScript null is "nothing". It is supposed to be something that doesn't exist.
+        <br />
+        Unfortunately, in JavaScript, the data type of null is an object
+        <br />
+        You can empty an object by setting it to null
+    <pre><code>
+            var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+            person = null;    // Now value is null, but type is still an object
+            // You can also empty an object by setting it to undefined
+            person = undefined;   // Now both value and type is undefined                        
+        </code></pre>
+    </p>
+    <h3>null vs undefined</h3>
+    <p>
+        undefined and null are equal in value but different in type
+    <pre><code>
+        typeof undefined           // undefined
+        typeof null                // object
+        
+        null === undefined         // false
+        null == undefined          // true        
+        </code></pre>
+    </p>
+
+    <h3>Primitive Data</h3>
+    <p>
+        A primitive data value is a single simple data value with no additional properties and methods
+    <pre><code>
+            typeof "John"              // Returns "string"
+            typeof 3.14                // Returns "number"
+            typeof true                // Returns "boolean"
+            typeof false               // Returns "boolean"
+            typeof x                   // Returns "undefined" (if x has no value)            
+        </code></pre>
+    </p>
+    <h3>Complex Data</h3>
+    <p>
+        The typeof operator can return one of two complex types: function, object
+    <pre><code>
+        typeof {name:'John', age:34} // Returns "object"
+        typeof [1,2,3,4]             // Returns "object" (not "array", see note below)
+        typeof null                  // Returns "object"
+        typeof function myFunc(){}   // Returns "function"        
+        </code></pre>
+    The typeof operator returns "object" for arrays because in JavaScript arrays are objects
+    </p>
+
+</body>
+
+</html>

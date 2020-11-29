@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Where to?</title>
+    <script>
+      function myFunction() {
+        document.getElementById('script').innerHTML = "this function is in head section";
+    }
+</script>
+<!-- loading scripts from external files -->
+<script src="js_whereto.js">
+</script>
+<!-- src attribute accepts both full and relative paths -->
+</head>
+
+<body>
+    <!-- javascript is inserted inside the script tag -->
+    <p id="script">
+
+    </p>
+    <button type="button" onclick="myFunction()">
+      Click me to reveal an important message!!!
+  </button>
+  <br />
+  <button type="button" onclick="externalFunction()">
+      Click me to run external functionality from external file
+  </button>
+  <!-- Placing scripts at the bottom of the <body> element improves the display speed, because script interpretation slows down the display. -->
+    <script>
+      document.getElementById('script').innerHTML = 'javascript is inserted inside script tag'
+  </script>
+</body>
+</html>

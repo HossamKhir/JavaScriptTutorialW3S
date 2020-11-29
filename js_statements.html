@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Statements</title>
+</head>
+
+<body>
+
+    <p>A <b>JavaScript program</b> is a list of <b>statements</b> to be executed by a computer.</p>
+
+    <p id="statement"></p>
+
+    <p id="note0"></p>
+    <p>
+        Ending statements with semicolon is not required, but highly recommended.
+    </p>
+    <p>
+        JavaScript ignores multiple spaces. You can add white space to your script to make it more readable.
+    </p>
+    <p>
+        For best readability, programmers often like to avoid code lines longer than 80 characters.
+        <br />
+        If a JavaScript statement does not fit on one line, the best place to break it is after an operator
+    </p>
+    <p>
+        JavaScript statements can be grouped together in code blocks, inside curly brackets {...}
+    </p>
+
+    <h1>Keywords</h1>
+    <table>
+        <tbody>
+            <tr>
+                <th>Keyword</th>
+                <th>Description</th>
+            </tr>
+
+            <tr>
+                <td>break</td>
+                <td>Terminates a switch or a loop</td>
+            </tr>
+            <tr>
+                <td>continue</td>
+                <td>Jumps out of a loop and starts at the top</td>
+            </tr>
+            <tr>
+                <td>debugger</td>
+                <td>Stops the execution of JavaScript, and calls (if available) the debugging
+                    function</td>
+            </tr>
+            <tr>
+                <td>do ... while</td>
+                <td>Executes a block of statements, and repeats the block, while a condition is
+                    true</td>
+            </tr>
+            <tr>
+                <td>for</td>
+                <td>Marks a block of statements to be executed, as long as a condition is true</td>
+            </tr>
+            <tr>
+                <td>function</td>
+                <td>Declares a function</td>
+            </tr>
+            <tr>
+                <td>if ... else</td>
+                <td>Marks a block of statements to be executed, depending on a condition</td>
+            </tr>
+            <tr>
+                <td>return</td>
+                <td>Exits a function</td>
+            </tr>
+            <tr>
+                <td>switch</td>
+                <td>Marks a block of statements to be executed, depending on different cases</td>
+            </tr>
+            <tr>
+                <td>try ... catch</td>
+                <td>Implements error handling to a block of statements</td>
+            </tr>
+            <tr>
+                <td>var</td>
+                <td>Declares a variable</td>
+            </tr>
+        </tbody>
+    </table>
+    <script>
+        var x, y, z;  // Statement 1
+        {
+            x = 5;    // Statement 2
+            y = 6;    // Statement 3
+        }
+        z = x + y;    // Statement 4
+        /* comments within script tag abide by javascript rules*/
+        document.getElementById("statement").innerHTML =
+            "The value of z is " + z + ".";  
+    </script>
+    <script>
+        document.getElementById("note0").innerHTML = "JavaScript statements are composed of: Values, Operators, Expressions, Keywords, and Comments.";
+    </script>
+</body>
+
+</html>

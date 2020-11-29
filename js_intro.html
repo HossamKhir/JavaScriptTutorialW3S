@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html lang="en_GB">
+  <head>
+    <title>Introduction demo</title>
+  </head>
+
+  <body>
+    <h1 id="changeme">changing content</h1>
+    <h2 id="hideme">hiding/showing content</h2>
+    <h2 id="styleme">changing style</h2>
+
+    <button type="button" onclick='document.getElementById("changeme").innerHTML = "Changed the content!"'>
+      Click me to change content!
+    </button>
+    <br />
+    <!-- javascript, as most scripting languages, works string with either single or double quotations -->
+    <button type="button" onclick="document.getElementById('hideme').style.display='none'">
+      Click me to hide content
+    </button>
+    <br />
+    <button type="button" onclick="document.getElementById('styleme').style.fontSize='35px'">Click me to change style
+    </button>
+    <br />
+    <button type="button" onclick="document.getElementById('hideme').style.display='block'">
+      Click me to show content
+    </button>
+  </body>
+
+
+</html>

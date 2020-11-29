@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Variables</title>
+</head>
+
+<body>
+    <h3>Using let and const</h3>
+    <p>
+        the const keyword defines a variable that cannot be reassigned
+        <br />
+        the let keyword defines a variable with restricted scope
+    </p>
+    <h3>The general rules for constructing names for variables (unique identifiers)</h3>
+    <ul>
+        <li>Names can contain letters, digits, underscores, and dollar signs</li>
+        <li>Names must begin with a letter</li>
+        <li>Names can also begin with $ and _</li>
+        <li>Names are case sensitive</li>
+        <li>Reserved words (like JavaScript keywords) cannot be used as names</li>
+    </ul>
+    <h3>Assignment vs Equal to</h3>
+    <p>
+        the equal sign (=) is an "assignment" operator
+        <br />
+        The "equal to" operator is written like ==
+    </p>
+    <h3>Data Types</h3>
+    <p>
+        JavaScript variables can hold numbers and strings
+    </p>
+    <h3>Declaring (Creating) Variables</h3>
+    <p>
+        to declare a variable is to assign some memory to it
+        <br />
+        by default <code>var</code> assigns the value <code>undefined</code> to any variable that is declared.
+        <br />
+        like:
+    <pre>
+            <code>
+                var carName;    // this is now holding a value of undefined
+            </code>
+        </pre>
+    </p>
+    <h3>Defining Variables</h3>
+    <p>
+        to define a variable is to assign some memory to it and pass initial data to it
+        <br />
+        like:
+    <pre>
+            <code>
+                var carName = "Porsche";    // this is a definition = declaration + assignment
+            </code>
+        </pre>
+    </p>
+    <p>
+        <strong>
+            <em>
+                It's a good programming practice to declare all variables at the beginning of a script
+                <br />
+                Re-Declaring JavaScript Variables will not override the value
+            </em>
+        </strong>
+    </p>
+    <h3>Declaring (or defining) multiple variables</h3>
+    <p>
+        You can declare many variables in one statement.
+        <br />
+        Start the statement with var and separate the variables by comma
+        <br />
+        A declaration can span on multiple lines
+    </p>
+    <p>
+        If you put a number in quotes, the rest of the numbers will be treated as strings, and concatenated
+    </p>
+    <p>
+        Since JavaScript treats a dollar sign as a letter, identifiers containing $ are valid variable names
+    </p>
+    <p>
+        Since JavaScript treats underscore as a letter, identifiers containing _ are valid variable names
+        <br />
+        <strong>
+            Using the underscore is not very common in JavaScript, but a convention among professional programmers is to
+            use it as an alias for "private (hidden)" variables
+        </strong>
+    </p>
+    <p id="definition"></p>
+    <p id="concat"></p>
+    <script>
+        var carName = "Porsche";
+        var carName;
+        document.getElementById('definition').innerHTML = carName;
+    </script>
+    <script>
+        var person = "John Doe", carName = "Porsche", price = 200;
+    </script>
+    <script>
+        var person = "John Doe",
+            carName = "Porsche",
+            price = 200;
+    </script>
+    <script>
+        var x = "5" + 2 + 3;
+        document.getElementById('concat').innerHTML = x;
+    </script>
+    <script>
+        var $$$ = "Hello World";
+        var $ = 2;
+        var $myMoney = 5;
+        var _surName = "Johnson";
+        var _x = 2;
+        var _100 = 5;
+    </script>
+</body>
+
+</html>

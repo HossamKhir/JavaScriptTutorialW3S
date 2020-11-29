@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <title>Functions</title>
+</head>
+
+<body>
+    <h3>Functions</h3>
+    <p>
+        A function is a block of code designed to perform a particular task, and is executed when "something" invokes it
+        (calls it).
+    <pre><code>
+            // function definition:
+            function myFunction(p1, p2) {
+                return p1 * p2;   // The function returns the product of p1 and p2
+              }              
+        </code></pre>
+    </p>
+    <h3>Function Syntax</h3>
+    <p>
+        A function is defined with the function keyword, followed by an identifier, followed by parentheses (),
+        enclosing argument list, separated by commas.
+        <br />
+        The code to be executed, by the function, is placed inside curly brackets: {}
+    <pre><code>
+            function identifier(parameter1, parameter2, parameter3, ...) {
+                // code to be executed
+              }              
+        </code></pre>
+    Inside the function, the arguments (the parameters) behave as local variables
+    <br />
+    A Function is much the same as a Procedure or a Subroutine, in other programming languages
+    </p>
+    <h3>Function Invocation</h3>
+    <p>
+        The code inside the function will execute when "something" invokes (calls) the function:
+    <ul>
+        <li>When an event occurs (when a user clicks a button)</li>
+        <li>When it is invoked (called) from JavaScript code</li>
+        <li>Automatically (self invoked)</li>
+    </ul>
+    </p>
+    <h3>Function Return</h3>
+    <p>
+        When JavaScript reaches a return statement, the function will stop executing
+        <br />
+        If the function was invoked from a statement, JavaScript will "return" to execute the code after the invoking
+        statement.
+        <br />
+        Functions often compute a return value. The return value is "returned" back to the "caller"
+    <pre><code>
+        var x = myFunction(4, 3);   // Function is called, return value will end up in x
+
+        function myFunction(a, b) {
+          return a * b;             // Function returns the product of a and b
+        }        
+        </code></pre>
+    </p>
+    <h3>Why Functions?</h3>
+    <p>
+        You can reuse code: Define the code once, and use it many times.
+        <br />
+        You can use the same code many times with different arguments, to produce different results
+    </p>
+    <p id="value"></p>
+    <p>
+        The () Operator Invokes the Function
+        <br />
+        Using toCelsius refers to the function object, and toCelsius() refers to the function result
+        <br />
+        Accessing a function without () will return the function object instead of the function result
+    </p>
+    <p id="reference"></p>
+    <p>
+        Functions Used as Variable Values
+        <br />
+    <pre><code>
+        var text = "The temperature is " + toCelsius(77) + " Celsius";
+        </code></pre>
+    </p>
+    <h3>Local Variables</h3>
+    <p>
+        Variables declared within a JavaScript function, become LOCAL to the function.
+        <br />
+        Local variables can only be accessed from within the function
+        <br />
+        Since local variables are only recognized inside their functions, variables with the same name can be used in
+        different functions.
+        <br />
+        Local variables are created when a function starts, and deleted when the function is completed.
+    </p>
+    <script>
+        function toCelsius(f) {
+            return (5 / 9) * (f - 32);
+        }
+        document.getElementById("value").innerHTML = toCelsius(77);
+    </script>
+    <script>
+        function toCelsius(f) {
+            return (5 / 9) * (f - 32);
+        }
+        document.getElementById("reference").innerHTML = toCelsius;
+    </script>
+    <script>
+        // code here can NOT use carName
+
+        function myFunction() {
+            var carName = "Volvo";
+            // code here CAN use carName
+        }
+
+        // code here can NOT use carName
+    </script>
+</body>
+
+</html>
