@@ -69,11 +69,25 @@
         In a function definition, this refers to the "owner" of the function
     </p>
     <h3>Accessing Object Methods</h3>
-    You access an object method with the syntax
-    <br />
+    <p>You access an object method with the syntax
+        <br />
     <pre><code>
         objectIdentifier.methodIdentifier()
     </code></pre>
+    <br />
+    accessing the method without the parenthese, will return the function definition
+    </p>
+    <p>
+        When a JavaScript variable is declared with the keyword "new", the variable is created as an object
+        <br />
+    <pre><code>
+            var x = new String();        // Declares x as a String object
+            var y = new Number();        // Declares y as a Number object
+            var z = new Boolean();       // Declares z as a Boolean object
+        </code></pre>
+    <br />
+    Avoid String, Number, and Boolean objects. They complicate your code and slow down execution speed
+    </p>
 </body>
 
 </html>

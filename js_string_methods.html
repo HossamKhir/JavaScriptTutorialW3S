@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>String Methods</title>
+</head>
+
+<body style="background-color: aquamarine;">
+    <div style="background-color: yellowgreen;">
+        All string methods return a new string. They don't modify the original string.<br />
+        Formally said: Strings are immutable: Strings cannot be changed, only replaced
+    </div>
+    <h3>String Length</h3>
+    <p>
+        The <i>length</i> property returns the length of a string
+    </p>
+    <button type="button" onclick="this.innerHTML += 'press me to learn my length:'.length">
+        press me to learn my length:
+    </button>
+    <h3>Finding a Substring in a String</h3>
+    <p>
+        The <i>indexOf()</i> method returns the index (position) of the first occurrence of a specified text in
+        a string
+        <br />
+        The <i>lastIndexOf()</i> method returns the index of the last occurrence of a specified text in a string
+        <br />
+        Both methods accept a second parameter as the starting position for the search
+    </p>
+    <h3>Searching for a Substring in a String</h3>
+    <p>
+        The <i>search()</i> method searches a string for a specified value and returns the position of the match
+    </p>
+    <p id="indexof">
+        Please locate where 'locate' occurs!
+    </p>
+    <h3>Extracting String Parts</h3>
+    <p>
+        There are 3 methods for extracting a part of a string
+    <ul>
+        <li>slice(start, end)</li>
+        <li>substring(start, end)</li>
+        <li>substr(start, length)</li>
+    </ul>
+    </p>
+    <h4>The slice() Method</h4>
+    <p>
+        slice() extracts a part of a string and returns the extracted part in a new string
+        <br />
+        The method takes 2 parameters: the start position, and the end position (end not included)
+        <br />
+        If a parameter is negative, that position is counted from the end of the string
+        <br />
+        If you omit the second parameter, the method will slice out the rest of the string
+    </p>
+    <p id="slice"></p>
+    <h4>The substring() Method</h4>
+    <p>
+        substring() is similar to slice() but cannot accept negative indexes
+    </p>
+    <p id="substring"></p>
+    <h4>The substr() Method</h4>
+    <p>
+        substr() is similar to slice() but the second parameter specifies the length of the extracted part
+    </p>
+    <p id="substr"></p>
+    <h3>Replacing String Content</h3>
+    <p>
+        The replace() method replaces a specified value with another value in a string, it does not change the string it
+        is called on. It returns a new string
+        <br />
+        By default, the replace() method replaces only the first match
+        <br />
+        the replace() method is case sensitive
+        <br />
+        To replace case insensitive, use a regular expression with an /i flag (i is for insensitive)
+        <br />
+        To replace all matches, use a regular expression with a /g flag (g is for global match)
+    </p>
+
+    <button type="button"
+        onclick="document.getElementById('replace').innerHTML = 'Please visit Microsoft and Microsoft!';">
+        reset
+    </button>
+
+    <button type="button" onclick="replacing()">
+        case sensitive replace
+    </button>
+    <button type="button" onclick="caseInsensitiveReplacing()">
+        case insensitive replace
+    </button>
+    <button type="button" onclick="globalReplacing()">
+        global replace
+    </button>
+    <p id="replace">
+        Please visit Microsoft and Microsoft!
+    </p>
+    <strong>
+        <p>
+            regular expressions are written without quotes
+        </p>
+    </strong>
+    <h3>Converting to Upper and Lower Case</h3>
+    <p>
+        convert a string to upper case by <em>toUpperCase()</em>, and to lower case by <em>toLowerCase()</em>
+    </p>
+    <p id="2upper"></p>
+    <p id="2lower"></p>
+    <h3>The concat() Method</h3>
+    <p>
+        concat() joins two or more strings
+    </p>
+    <button type="button" onclick="conc()" id="concat">
+        Press to concatenate
+    </button>
+    <h3>String.trim()</h3>
+    <p>
+        The trim() method removes whitespace from both sides of a string
+    </p>
+    <h3>String Padding</h3>
+    <p>
+        padStart and padEnd support padding at the beginning and at the end of a string
+    </p>
+    <p id="pad"></p>
+    <h3>Extracting String Characters</h3>
+    <p>
+        There are 3 methods for extracting string characters
+    <ul>
+        <li>charAt(position)</li>
+        <li>charCodeAt(position)</li>
+        <li>Property access [ ]</li>
+    </ul>
+    </p>
+    <h4>The charAt() Method</h4>
+    <p id="extractAt">returns the character at a specified index (position) in a string</p>
+    <p id="char_at">inner</p>
+    <h4>The charCodeAt() Method</h4>
+    <p id="extractCode">returns the unicode of the character at a specified index in a string, UTF-16 code (an integer
+        between 0 and 65535)</p>
+    <p id="code_at"></p>
+    <h4>Property Access</h4>
+    <p id="propeacc"></p>
+    <h3>Converting a String to an Array</h3>
+    <p>
+        A string can be converted to an array with the split(separator) method
+        <br />
+        If the separator is omitted, the returned array will contain the whole string in index [0].
+        <br />
+        If the separator is "", the returned array will be an array of single characters
+        check console (Ctrl+Shift+I)
+    </p>
+    <script>
+        // var str = "Please locate where 'locate' occurs!";
+        var str = document.getElementById('indexof').innerHTML;
+        var pos = str.indexOf("locate");
+        str += "\tfirst: " + pos;
+        document.getElementById('indexof').innerHTML = str;
+        pos = str.lastIndexOf('locate');
+        str += "\tlast: " + pos;
+        document.getElementById('indexof').innerHTML = str;
+        pos = str.indexOf('missing');
+        str += "\tnot found: " + pos;
+        document.getElementById('indexof').innerHTML = str;
+        pos = str.indexOf('locate', 15);
+        str += "\twith starting poisition: " + pos;
+        document.getElementById('indexof').innerHTML = str;
+        pos = str.search('locate');
+        str += "\tsearch: " + pos;
+        document.getElementById('indexof').innerHTML = str;
+        // slicing
+        str = "Apple, Banana, Kiwi";
+        var res = str.slice(7, 13);
+        document.getElementById('slice').innerHTML = "slice: " + res;
+        res = str.slice(-12, -6);   // also results in Banana
+        document.getElementById('slice').innerHTML += "<br />negative slicing: " + res;
+        res = str.slice(7); // removes Apple
+        document.getElementById('slice').innerHTML += "<br />single-parameter slicing: " + res;
+        res = str.slice(-12);   // also removes Apple
+        document.getElementById('slice').innerHTML += "<br />negative single-paramter slicing: " + res;
+        res = str.substring(7, 13); // result is Banana
+        document.getElementById('substring').innerHTML = "substring: " + res;
+        res = str.substr(7, 6); // result is Banana
+        document.getElementById('substr').innerHTML = "substr: " + res;
+        res = str.substr(7);    // removes Apple
+        document.getElementById('substr').innerHTML += "<br />single-paramter substr: " + res;
+        res = str.substr(-4);   // keeps Kiwi
+        document.getElementById('substr').innerHTML += "<br />negative single-paramter substr: " + res;
+        function replacing() {
+            var content = document.getElementById('replace').innerHTML;
+            content = content.replace("Microsoft", 'W3Schools');
+            document.getElementById('replace').innerHTML = content;
+            console.log(content);
+        }
+        function caseInsensitiveReplacing() {
+            var content = document.getElementById('replace').innerHTML;
+            content = content.replace(/MICROSOFT/i, 'W3Schools');
+            document.getElementById('replace').innerHTML = content;
+            console.log(content);
+        }
+        function globalReplacing() {
+            var content = document.getElementById('replace').innerHTML;
+            content = content.replace(/Microsoft/g, 'W3Schools');
+            document.getElementById('replace').innerHTML = content;
+            console.log(content);
+        }
+        str = document.getElementById('replace').innerHTML;
+        res = str.toUpperCase();
+        document.getElementById('2upper').innerHTML = "toUpperCase():\t" + res;
+        res = str.toLowerCase();
+        document.getElementById('2lower').innerHTML = "toLowerCase():\t" + res;
+        function conc() {
+            str = document.getElementById('2upper').innerHTML.concat(document.getElementById('2lower').innerHTML);
+            document.getElementById('concat').innerHTML = str;
+        }
+        str = "5";
+        res = str.padStart(4, 0);
+        document.getElementById('pad').innerHTML = res;
+        res = str.padEnd(4, 0);
+        document.getElementById('pad').innerHTML += "<br />" + res;
+        str = document.getElementById('extractAt').innerHTML;
+        document.getElementById('char_at').innerHTML = str.charAt(0);
+        str = document.getElementById('extractCode').innerHTML;
+        document.getElementById('code_at').innerHTML = str.charCodeAt(0);
+        document.getElementById('propeacc').innerHTML = str[0];
+        var txt = "a,b,c,d,e";   // String
+        txt.split(",");          // Split on commas
+        txt.split(" ");          // Split on spaces
+        txt.split("|");          // Split on pipe
+        txt = "Hello";
+        txt = txt.split("");
+        for (var i = 0; i < txt.length; i++) {
+            console.log(txt[i]);
+        }
+    </script>
+    <script>
+
+    </script>
+</body>
+
+</html>
